@@ -1,0 +1,23 @@
+/* Button hover animation */
+button {
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+/* Fade-in for posts */
+.post-card {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
