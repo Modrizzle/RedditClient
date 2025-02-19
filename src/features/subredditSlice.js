@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchSubreddits } from "../api/redditAPI";  // ✅ Ensure correct import
+import { fetchSubreddits } from "../api/redditAPI";  
 
 export const loadSubreddits = createAsyncThunk("subreddits/load", async () => {
     console.log("🔄 Fetching subreddits...");

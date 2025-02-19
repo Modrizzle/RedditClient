@@ -20,7 +20,7 @@ export const fetchPosts = async (subreddit) => {
 };
 
 
-// ☑️ Fetch popular subreddits (THIS WAS MISSING)
+// ☑️ Fetch popular subreddits 
 export const fetchSubreddits = async () => {
     try {
         const response = await fetch(`${BASE_URL}/subreddits/popular.json`);
