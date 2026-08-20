@@ -8,6 +8,8 @@ node_modules
 
 # testing
 /coverage
+/src/tests/
+/src/utils/performanceMonitor.js
 
 # production
 /build
@@ -22,3 +24,19 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local development configuration
+.env
+.vscode/
+
+# personal project notes and portfolio material
+/BUG_FIX_LOG.md
+/MEME_BOT_ANALYSIS.md
+/PROJECT_CONFIGURATION.md
+/TECHNICAL_PORTFOLIO.md
+/JOB_APPLICATION_MESSAGE.md
+/PERFORMANCE.md
+
+# unrelated experiments and unused generated drafts
+/examples/
+/public/assets/reddit-explorer-mascot.png
