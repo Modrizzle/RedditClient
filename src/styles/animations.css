@@ -1,23 +1,147 @@
-/* Button hover animation */
+/* Enhanced animations for professional UI */
+
+/* Button hover animations */
 button {
-    transition: background 0.3s ease-in-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-button:hover {
-    background-color: #ff4500;
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
-/* Fade-in for posts */
+button:hover::before {
+    left: 100%;
+}
+
+/* Staggered fade-in for post cards */
 .post-card {
     opacity: 0;
-    animation: fadeIn 0.5s forwards;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
 }
 
-@keyframes fadeIn {
+.post-card:nth-child(1) { animation-delay: 0.1s; }
+.post-card:nth-child(2) { animation-delay: 0.2s; }
+.post-card:nth-child(3) { animation-delay: 0.3s; }
+.post-card:nth-child(4) { animation-delay: 0.4s; }
+.post-card:nth-child(5) { animation-delay: 0.5s; }
+.post-card:nth-child(n+6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
     from {
         opacity: 0;
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
+
+/* Header animation */
+.app-header {
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* Pulse animation for loading states */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading-spinner {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Smooth transitions for all interactive elements */
+input, button, .post-card, .view-post-btn, .badge {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Floating animation for badges */
+.badge {
+    animation: float 3s ease-in-out infinite;
+}
+
+.badge:nth-child(2) { animation-delay: 0.5s; }
+.badge:nth-child(3) { animation-delay: 1s; }
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Scale animation for post rank */
+.post-rank {
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus animations */
+input:focus {
+    animation: focusGlow 0.3s ease;
+}
+
+@keyframes focusGlow {
+    from {
+        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.4);
+    }
+    to {
+        box-shadow: 0 0 0 3px rgba(255, 69, 0, 0.1);
+    }
+}
+  
+  

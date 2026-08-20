@@ -5,6 +5,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
     "cra-template-redux": "2.0.0",
+    "lucide-react": "^0.476.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
@@ -15,6 +16,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "test:ci": "CI=true react-scripts test --coverage --watchAll=false",
+    "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
+    "lighthouse": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
